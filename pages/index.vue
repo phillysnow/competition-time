@@ -71,6 +71,27 @@ export default Vue.extend({
   asyncData({app}) {
     // INFO -> app.$fireStore etc. are accessible
   },
+  async fetch({ route, store, params, redirect, app }) {
+   
+    // INFO -> this.$fireAuth user etc. are accessible
+    // INFO -> this.$store.state.authUser is accessible even on server-side
+ 
+    if (process.server) {
+      try {
+        console.log( '[SERVER][fetch] - this.$store.state.authUser', store.state.authUser)
+      } catch (err) {
+        console.error(err)
+      }
+    } else {
+      console.log('[CLIENT][fetch]')
+      try {
+        console.log(
+          '[CLIENT][fetch] store.state.authUser:',store.state.authUser)
+      } catch (err) {
+        console.error(err)
+      }
+    }
+  },
   data: () => ({
     exampleComponents: [
       Auth,

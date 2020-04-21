@@ -79,11 +79,16 @@ export default () => {
       },
       onFirebaseHosting: false,
       services: {
+        
         auth: {
+          persistence: 'local',
           initialize: {
             onAuthStateChangedAction: 'onAuthStateChanged'
           },
-          ssr: true
+          ssr: {
+            credential: '~/serviceAccountKey.json',
+            serverLogin: true
+          }
         },
         firestore: true,
         functions: {
