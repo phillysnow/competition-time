@@ -4,8 +4,11 @@
       Firebase Firestore
     </h3>
     <div class="links">
-      <v-btn color="primary" outlined @click="writeToFirestore()"
+      <v-btn color="primary" outlined @click="writeToFirestore"
         >Write to Firestore</v-btn
+      >
+      <v-btn color="primary" outlined @click="arrayContainsTest"
+        >Check Array Contains</v-btn
       >
       <pre>
 async writeToFirestore() {
@@ -67,6 +70,22 @@ export default Vue.extend({
           return
         }
         alert(doc.message)
+      } catch (e) {
+        alert(e)
+        return
+      }
+    },
+    async arrayContainsTest() {
+      const ref = this.$fireStore.collection('arrayTest').where("array", "array-contains-any", ["C"])
+      // this works too:
+      // const ref = this.$fireStore.collection('arrayTest').where("array", "array-contains", "A")
+      try {
+        const snapshot = await ref.get()
+        console.log("HIER", snapshot)
+        const docs = snapshot.docs
+        for (const doc of docs) {
+          console.log(doc.data())
+        }
       } catch (e) {
         alert(e)
         return
