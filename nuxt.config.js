@@ -30,7 +30,6 @@ export default () => {
     /*
      ** Plugins to load before mounting the App
      */
-    plugins: ['~/plugins/github-buttons.js'],
 
     /*
      ** Nuxt.js modules
@@ -56,13 +55,6 @@ export default () => {
       }
     },
 
-    /*
-     ** Nuxt.js Middleware
-     */
-    router: {
-      middleware: ['testMiddleware']
-    },
-
     //Nuxt-Fire Module Options
     firebase: {
       config: {
@@ -79,43 +71,9 @@ export default () => {
       },
       onFirebaseHosting: false,
       services: {
-        auth: {
-          initialize: {
-            onAuthStateChangedAction: 'onAuthStateChanged'
-          },
-          ssr: true
-        },
-        firestore: true,
-        functions: {
-          // emulatorPort: 12345
-        },
-        storage: true,
-        realtimeDb: true,
-        performance: true,
-        analytics: true,
-        remoteConfig: {
-          settings: {
-            fetchTimeoutMillis: 60000,
-            minimumFetchIntervalMillis: 43200000
-          },
-          defaultConfig: {
-            welcome_message: 'Welcome'
-          }
-        },
         messaging: {
           createServiceWorker: true
         }
-      }
-    },
-
-    pwa: {
-      workbox: {
-        importScripts: [
-          '/firebase-auth-sw.js'
-        ],
-        // by default the workbox module will not install the service worker in dev environment to avoid conflicts with HMR
-        // only set this true for testing and remember to always clear your browser cache in development
-        dev: true
       }
     },
 
