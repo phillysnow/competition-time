@@ -66,14 +66,14 @@ export default () => {
     //Nuxt-Fire Module Options
     firebase: {
       config: {
-        apiKey: 'AIzaSyDa-YwgWTp2GDyVYEfv-XLb62100_HoEvU',
-        authDomain: 'nuxt-fire-demo.firebaseapp.com',
-        databaseURL: 'https://nuxt-fire-demo.firebaseio.com',
-        projectId: 'nuxt-fire-demo',
-        storageBucket: 'nuxt-fire-demo.appspot.com',
-        messagingSenderId: '807370470428',
-        appId: '1:807370470428:web:26da98c86c3fd352',
-        measurementId: 'G-XT6PVC1D4X',
+        apiKey: "AIzaSyAUhEYQm6ALh8TRS7Z7moRGTtPC7rGf8b8",
+        authDomain: "competition-time-54e43.firebaseapp.com",
+        databaseURL: "https://competition-time-54e43.firebaseio.com",
+        projectId: "competition-time-54e43",
+        storageBucket: "competition-time-54e43.appspot.com",
+        messagingSenderId: "664633265774",
+        appId: "1:664633265774:web:87ac32f554cae36608e07f",
+        measurementId: "G-JH6P8D1K0F",
         fcmPublicVapidKey:
           'BL_xoiuOe5vbb2vJkCNnuswn03NwCsyCkJUgRbuQA5tpg7J4E4z50MO8b-wrrad6fcysYAaFjHqU7D9o0oCWL8w'
       },
